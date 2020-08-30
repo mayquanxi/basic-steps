@@ -22,7 +22,13 @@ pipeline {
     }
     stage('TEST2') {
     	steps {
-    		echo message: 'this is command echo'
+    		echo message: 'this is command echo'   //full echo
+    		echo "this is command echo short" //short echo
+    	}
+    }
+    stage('error example') {
+    	steps {
+    		error message: 'this is stage error example'
     	}
     }   
   }
