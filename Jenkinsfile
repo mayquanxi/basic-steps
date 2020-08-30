@@ -77,7 +77,7 @@ pipeline {
     	}
     	steps {
     		script {
-    			if (env.ISUNIX = 'true') {
+    			if (env.ISUNIX == 'true') {
     				echo "pipeline currently on linux or OSX ENV: ${env.ISUNIX}"
     			}
     			else {
