@@ -112,12 +112,13 @@ pipeline {
     		)
     	}
     }
-    stage('TOOLS') {
+    stage('TOOLS') {					//use tool for pipeline
     	tools {
     		maven 'maven'    //too had pre-define on global tool configuration
     	}
     	steps {
     		sh 'mvn --version'
+    		catchError(message: message, buildResult: 'UNSTABLE', stageResult: 'UNSTABLE')
     	}
     }
   }
