@@ -22,7 +22,9 @@ pipeline {
     }
     stage('echo, pwd and readFile') {
     	options {
-    		retry count: 2                        //retry
+    		retry count: 2                        //retry happen when error inside or co ngoai le nao gay ra khien duong ong khong thanh cong.
+    		sleep(time: 15, unit: SECONDS)
+    		timeout(time: 5, unit: MINUTES)
     	}
     	environment	{
     		PWD = pwd()
@@ -32,7 +34,9 @@ pipeline {
     		echo message: 'this is command echo'   //full echo
     		echo "this is command echo short" //short echo
     		echo "ENV: ${env.PWD}"    				//echo PWD
-    		echo "ENV: ${env.READFILE}" // echo readfile newfile
+    		retry(2){								//retry say ra khi lenh ben trong say ra loi khong cho ket qua nhu mong doi
+    			echo "ENV: ${env.READFILE}" // echo readfile newfile
+    		}
     	}
     }
     //stage('error example') {
