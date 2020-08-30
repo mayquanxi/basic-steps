@@ -118,7 +118,11 @@ pipeline {
     	}
     	steps {
     		sh 'mvn --version'
-    		catchError(message: 'message', buildResult: 'UNSTABLE', stageResult: 'UNSTABLE')
+    	}
+    }
+    post {
+    	success {
+    		archiveArtifacts artifacts: '**/*'
     	}
     }
   }
