@@ -19,6 +19,11 @@ pipeline {
         	echo 'I will not run!' 
         }
       }   
+    }
+    stage('TEST2') {
+    	steps {
+    		echo message: 'this is command echo'
+    	}
     }   
   }
 } 
