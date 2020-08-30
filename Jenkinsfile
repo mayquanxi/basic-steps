@@ -23,12 +23,13 @@ pipeline {
     stage('echo, pwd and readFile') {
     	environment	{
     		PWD = pwd()
+    		READFILE = readFile file: "./dir2/newfile"
     	}
     	steps {
     		echo message: 'this is command echo'   //full echo
     		echo "this is command echo short" //short echo
     		echo "ENV: ${env.PWD}"    				//echo PWD
-    		readFile file: "./dir2/newfile"  //readfile newfile
+    		echo "ENV: ${env.READFILE}" // echo readfile newfile
     	}
     }
     //stage('error example') {
