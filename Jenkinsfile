@@ -112,6 +112,15 @@ pipeline {
     		)
     	}
     }
-
+    stage('TOOLS') {
+    	tools {
+    		maven 'maven'
+    		nodejs 'node'
+    	}
+    	steps {
+    		sh 'mvn --version'
+    		sh 'node --version'
+    	}
+    }
   }
 } 
