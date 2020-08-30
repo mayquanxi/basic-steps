@@ -35,7 +35,18 @@ pipeline {
     	environment {
     		FILEEXISTS = fileExists 'indexx.html'     //set env with expression
     	}
-    	
+    	//steps {
+    	//    echo "${env.FILEEXISTS}"   // whill echo 'true' if file exist
+    	//    echo "current branch: ${env.BRANCH_NAME}"
+    	//    script {											//khai bao script for if else
+    	//    	if (env.FILEEXISTS == 'true') {
+    	//    		echo 'file existing on dir'
+    	//        }
+    	//    	else {
+    	//    		echo 'file not existing on dir'
+    	//    	}
+    	//    }
+    	//}
     	stages {
     		stage('File Existing') {
     			when {
