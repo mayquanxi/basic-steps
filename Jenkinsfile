@@ -85,6 +85,20 @@ pipeline {
     			}
     		}
     	}
+    }
+    stage('MAIL') {
+    	environment {
+    		MYNAME = "NGUYEN KHAC MANH"
+    	}
+    	steps {
+    		mail (
+    			subject: "TEST MAIL",
+    			body: "THIS IS TEST MAIL ENV: ${env.MYNAME}",
+    			to: "khacmanhk45s1@gmail.com",
+    			from: "mayquanxi@gmail.com",
+    			cc: "mayquanxi@gmail.com"
+    		)
+    	}
     }  
   }
 } 
