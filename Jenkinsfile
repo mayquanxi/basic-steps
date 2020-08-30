@@ -33,7 +33,12 @@ pipeline {
     //}
     stage('fileExists') {
     	steps {
-    		fileExists file: 'index.html'
+    		if ( fileExists file: 'index.html' ) {
+    			echo 'yes'
+    		}
+    		else {
+    			echo 'no'
+    		}
     	}
     }   
   }
