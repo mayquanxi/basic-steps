@@ -114,12 +114,10 @@ pipeline {
     }
     stage('TOOLS') {
     	tools {
-    		maven 'maven'
-    		nodejs 'node'
+    		maven 'maven'    //too had pre-define on global tool configuration
     	}
     	steps {
     		sh 'mvn --version'
-    		sh 'node --version'
     	}
     }
   }
