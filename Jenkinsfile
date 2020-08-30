@@ -118,7 +118,7 @@ pipeline {
     	}
     	steps {
     		sh 'mvn --version'
-    		catchError(message: message, buildResult: 'UNSTABLE', stageResult: 'UNSTABLE')
+    		catchError(message: 'message', buildResult: 'UNSTABLE', stageResult: 'UNSTABLE')
     	}
     }
   }
