@@ -21,6 +21,9 @@ pipeline {
       }   
     }
     stage('echo, pwd and readFile') {
+    	options {
+    		retry count: 2                        //retry
+    	}
     	environment	{
     		PWD = pwd()
     		READFILE = readFile file: "./dir2/newfile"
