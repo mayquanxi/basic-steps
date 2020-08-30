@@ -8,6 +8,7 @@ pipeline {
         dir('dir') {
         	deleteDir()
         }
+      	sh 'ls -l'
       }   
       post {
         success { 
