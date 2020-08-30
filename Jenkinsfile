@@ -70,6 +70,21 @@ pipeline {
     			}
     		}
     	}
-    }   
+    }
+    stage('isUnix') {
+    	environment { 
+    		ISUNIX = isUnix()
+    	}
+    	steps {
+    		script {
+    			if (env.ISUNIX = 'true') {
+    				echo "pipeline currently on linux or OSX ENV: ${env.ISUNIX}"
+    			}
+    			else {
+    				echo "pipeline currently on Windows: ${env.ISUNIX}"
+    			}
+    		}
+    	}
+    }  
   }
 } 
