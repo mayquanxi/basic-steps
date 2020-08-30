@@ -38,13 +38,26 @@ pipeline {
     	steps {
     		echo "${env.FILEEXISTS}"   // whill echo 'true' if file exist
     		echo "current branch: ${env.BRANCH_NAME}"
-    		script {
+    		script {											//khai bao script for if else
     			if (env.FILEEXISTS == 'true') {
     				echo 'file existing on dir'
     			}
     			else {
     				echo 'file not existing on dir'
     			}
+    		}
+    	}
+    	stages {
+    		stage('File Existing') {
+    			when {
+    				expression {
+    					FILEEXISTS == 'true'
+    				}
+    			}
+    			steps {
+    				echo "File existing in dir with using When conditional"
+    			}
+
     		}
     	}
     }   
