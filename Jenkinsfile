@@ -33,7 +33,7 @@ pipeline {
     //}
     stage('fileExists') {
     	environment {
-    		FILEEXISTS = fileExists 'index.html'     //set env with expression
+    		FILEEXISTS = fileExists 'indexx.html'     //set env with expression
     	}
     	
     	stages {
