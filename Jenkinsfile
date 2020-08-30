@@ -33,7 +33,7 @@ pipeline {
     //}
     stage('fileExists') {
     	environment {
-    		FILEEXISTS = "fileExists 'index.html'"
+    		FILEEXISTS = fileExists 'index.html'
     	}
     	steps {
     		echo "${env.FILEEXISTS}"
