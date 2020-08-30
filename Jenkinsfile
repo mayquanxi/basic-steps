@@ -23,7 +23,6 @@ pipeline {
     stage('echo, pwd and readFile') {
     	options {
     		retry count: 2                        //retry happen when error inside or co ngoai le nao gay ra khien duong ong khong thanh cong.
-    		sleep(time: 15, unit: SECONDS)
     		timeout(time: 5, unit: MINUTES)
     	}
     	environment	{
