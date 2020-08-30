@@ -27,9 +27,9 @@ pipeline {
     	}
     }
     stage('error example') {
-    	steps {
-    		error message: 'this is stage error example'
-    	}
+    	//steps {
+    		error message: 'this is stage error example'   // bao co loi trong mot mot giai doan
+    	//}
     }   
   }
 } 
