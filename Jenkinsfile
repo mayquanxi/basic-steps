@@ -28,7 +28,7 @@ pipeline {
     }
     //stage('error example') {
     //	steps {
-    //		error message: 'this is stage error example'   // bao co loi trong mot mot giai doan
+    //		error message: 'this is stage error example'   // bao cao co loi tren mot giai doan 
     //	}
     //}
     stage('fileExists') {
@@ -48,7 +48,7 @@ pipeline {
     	//    }
     	//}
     	stages {
-    		stage('File Existing') {
+    		stage('File Existing') {   							//use fileExists for when conditional
     			when {
     				expression {
     					FILEEXISTS == 'true'
