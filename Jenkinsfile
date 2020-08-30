@@ -33,10 +33,16 @@ pipeline {
     //}
     stage('fileExists') {
     	environment {
-    		FILEEXISTS = fileExists 'index.html'
+    		FILEEXISTS = fileExists 'index.html'     //set env with expression
     	}
     	steps {
-    		echo "${env.FILEEXISTS}"
+    		echo "${env.FILEEXISTS}"   // whill echo 'true' if file exist
+    		if ( FILEEXISTS == true ) {
+    			echo 'file existing on dir'
+    		}
+    		else {
+    			echo 'file not existing on dir'
+    		}
     	}
     }   
   }
