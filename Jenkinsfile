@@ -27,7 +27,7 @@ pipeline {
     	steps {
     		echo message: 'this is command echo'   //full echo
     		echo "this is command echo short" //short echo
-    		echo ${env.PWD}
+    		echo "ENV: ${env.PWD}"
     	}
     }
     //stage('error example') {
