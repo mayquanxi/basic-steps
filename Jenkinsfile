@@ -26,9 +26,14 @@ pipeline {
     		echo "this is command echo short" //short echo
     	}
     }
-    stage('error example') {
+    //stage('error example') {
+    //	steps {
+    //		error message: 'this is stage error example'   // bao co loi trong mot mot giai doan
+    //	}
+    //}
+    stage('fileExists') {
     	steps {
-    		error message: 'this is stage error example'   // bao co loi trong mot mot giai doan
+    		fileExists file: 'index.html'
     	}
     }   
   }
