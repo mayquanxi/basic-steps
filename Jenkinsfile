@@ -32,12 +32,11 @@ pipeline {
     //	}
     //}
     stage('fileExists') {
+    	environment {
+    		FILEEXISTS = 'fileExists 'index.html''
+    	}
     	steps {
-    		if (fileExists('file')) {
-    		    echo 'Yes'
-    		} else {
-    		    echo 'No'
-    		}
+    		echo "${env.FILEEXISTS}"
     	}
     }   
   }
