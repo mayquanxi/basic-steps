@@ -2,18 +2,20 @@ pipeline {
   agent {
   	label 'master'
   }
-  options { skipDefaultCheckout() }
   stages {
-    stage('catchError') {
+    stage('TEST') {
       steps {
-        catchError {
-          error 'Force error'
+        dir('dir') {
+        	deleteDir()
         }
-        echo 'This echo still runs'
       }   
       post {
-        success { echo 'Post success will still run' }
-        failure { echo 'I will not run!' }
+        success { 
+        	echo 'Post success will still run' 
+        }
+        failure { 
+        	echo 'I will not run!' 
+        }
       }   
     }   
   }
