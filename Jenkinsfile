@@ -20,10 +20,11 @@ pipeline {
         }
       }   
     }
-    stage('TEST2') {
+    stage('echo and pwd') {
     	steps {
     		echo message: 'this is command echo'   //full echo
     		echo "this is command echo short" //short echo
+    		pwd()
     	}
     }
     //stage('error example') {
@@ -47,7 +48,7 @@ pipeline {
     	//    	}
     	//    }
     	//}
-    	stages {
+    	stages {							//co giai doan nay thi khong co steps phia ben tren
     		stage('File Existing') {   							//use fileExists for when conditional
     			when {
     				expression {
@@ -99,6 +100,7 @@ pipeline {
     			cc: "mayquanxi@gmail.com"
     		)
     	}
-    }  
+    }
+
   }
 } 
