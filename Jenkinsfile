@@ -120,10 +120,10 @@ pipeline {
     		sh 'mvn --version'
     	}
     }
-    post {
-    	success {
-    		archiveArtifacts artifacts: '**/*'
-    	}
-    }
+  }
+  post {
+  	success {
+  		archiveArtifacts artifacts: '**/*'
+  	}
   }
 } 
