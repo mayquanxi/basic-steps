@@ -37,7 +37,8 @@ pipeline {
     	}
     	steps {
     		echo "${env.FILEEXISTS}"   // whill echo 'true' if file exist
-    		if ( FILEEXISTS == true ) {
+    		echo "current branch: ${env.BRANCH_NAME}"
+    		if ( env.FILEEXISTS == true ) {
     			echo 'file existing on dir'
     		}
     		else {
