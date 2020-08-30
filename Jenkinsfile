@@ -44,9 +44,19 @@ pipeline {
     				}
     			}
     			steps {
-    				echo "File existing in dir with using When conditional"
+    				echo "File existing in dir with using When conditional ENV: ${env.FILEEXISTS}"
     			}
 
+    		}
+    		stage('File not Existing') {
+    			when {
+    				expression {
+    					FILEEXISTS == 'false'
+    				}
+    			}
+    			steps {
+    				echo "File not existing in dir with using when conditional ENV: ${env.FILEEXISTS}"
+    			}
     		}
     	}
     }   
