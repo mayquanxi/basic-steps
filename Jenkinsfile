@@ -5,6 +5,7 @@ pipeline {
   stages {
     stage('TEST') {
       steps {
+      	sh 'ls -l'
         dir('dir') {
         	deleteDir()
         }
