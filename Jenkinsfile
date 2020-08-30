@@ -20,14 +20,15 @@ pipeline {
         }
       }   
     }
-    stage('echo and pwd') {
+    stage('echo, pwd and readFile') {
     	environment	{
     		PWD = pwd()
     	}
     	steps {
     		echo message: 'this is command echo'   //full echo
     		echo "this is command echo short" //short echo
-    		echo "ENV: ${env.PWD}"
+    		echo "ENV: ${env.PWD}"    				//echo PWD
+    		readFile file: "./dir/newfile"  //readfile newfile
     	}
     }
     //stage('error example') {
