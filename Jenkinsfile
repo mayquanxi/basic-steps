@@ -24,7 +24,7 @@ pipeline {
     	steps {
     		echo message: 'this is command echo'   //full echo
     		echo "this is command echo short" //short echo
-    		pwd()
+    		pwd(.)
     	}
     }
     //stage('error example') {
