@@ -21,10 +21,13 @@ pipeline {
       }   
     }
     stage('echo and pwd') {
+    	environment	{
+    		PWD = pwd()
+    	}
     	steps {
     		echo message: 'this is command echo'   //full echo
     		echo "this is command echo short" //short echo
-    		pwd('.')
+    		echo ${env.PWD}
     	}
     }
     //stage('error example') {
